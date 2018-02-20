@@ -1,5 +1,6 @@
 package sdu.cs58.kanitin.logintest;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -46,17 +47,27 @@ public class LoginActivity extends AppCompatActivity {
                 //ตรวจสอบ ช่องว่าง or ค่าว่าง
                 if ((nameString.length()==0) || (userString.length()==0) || (passString.length()==0)) {
                     Toast.makeText(getApplicationContext(),"กรุณาใส่ให้ครับ น่ะจ๊ะ",Toast.LENGTH_SHORT).show();
+
                 }
 
 
                 // ตรวจสอบการ login ผ่านคำสั่ง if & else
                 if ((userString.equals("admin"))&&(passString.equals("1234"))) {
                     Toast.makeText(getApplicationContext(),"Login Success",Toast.LENGTH_LONG).show();
+
+                    //ส่งผู้ใช้เป็นยังหน้าหลัก ส่งข้อมูลด้วย
+                    Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+                    mainIntent.putExtra("nameString", nameString);
+                    startActivity(mainIntent);
+
+                    Toast.makeText(getApplicationContext(), "ยินดีต้อนรับ ",Toast.LENGTH_SHORT).show();
+
                 }
                 else {
                     Toast.makeText(getApplicationContext(),"Login Fail",Toast.LENGTH_SHORT).show();
 
                 }
+
             }
         });//END OnClickListener
 
