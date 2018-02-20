@@ -43,6 +43,12 @@ public class LoginActivity extends AppCompatActivity {
                 passString = passwordEditText.getText().toString().trim();
 
 
+                //ตรวจสอบ ช่องว่าง or ค่าว่าง
+                if ((nameString.length()==0) || (userString.length()==0) || (passString.length()==0)) {
+                    Toast.makeText(getApplicationContext(),"มึงเห็นไหมว่ายังไม่ครบ",Toast.LENGTH_SHORT).show();
+                }
+
+
                 // ตรวจสอบการ login ผ่านคำสั่ง if & else
                 if ((userString.equals("admin"))&&(passString.equals("1234"))) {
                     Toast.makeText(getApplicationContext(),"Login Success",Toast.LENGTH_LONG).show();
