@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 //ตรวจสอบ ช่องว่าง or ค่าว่าง
                 if ((nameString.length()==0) || (userString.length()==0) || (passString.length()==0)) {
-                    Toast.makeText(getApplicationContext(),"มึงเห็นไหมว่ายังไม่ครบ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"กรุณาใส่ให้ครับ น่ะจ๊ะ",Toast.LENGTH_SHORT).show();
                 }
 
 
